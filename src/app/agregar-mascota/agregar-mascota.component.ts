@@ -47,12 +47,12 @@ export class AgregarMascotaComponent implements OnInit {
       const dogsWithId = { ...dogsData, id: this.id };
       this.dogsService.actualizarMascota(this.id, dogsWithId).subscribe(
         (response) => {
-          this.snackBar.open('Usuario actualizado con éxito', 'Cerrar', {
+          this.snackBar.open('Mascota actualizado con éxito', 'Cerrar', {
             duration: 3000,
             panelClass: ['success-snackbar'],
             verticalPosition: 'top',
           });
-          this.router.navigate(['/ver-usuarios']);
+          this.router.navigate(['/ver-mascotas']);
         },
         (error) => {
           this.snackBar.open('Error en la actualización', 'Cerrar', {

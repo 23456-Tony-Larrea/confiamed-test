@@ -6,7 +6,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   template: `
     <h1 mat-dialog-title>Confirmar</h1>
     <div mat-dialog-content>
-      <p>¿Estás seguro de que deseas eliminar al usuario?</p>
+      <p>¿Estás seguro de que deseas eliminare este campo?</p>
     </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onCancel()">Cancelar</button>
