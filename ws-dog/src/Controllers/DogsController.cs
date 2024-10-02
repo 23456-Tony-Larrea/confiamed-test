@@ -21,7 +21,17 @@ namespace ws_dog.src.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Dogs>>> GetDogs()
         {
-            return await _context.Dogs.ToListAsync();
+            try
+            {
+                var dogs = await _context.Dogs.ToListAsync();
+                return Ok(new { data = dogs });
+
+
+                }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpGet("{id}")]
@@ -33,7 +43,7 @@ namespace ws_dog.src.Controllers
             {
                 return NotFound();
             }
-            return Ok(new { data = dog });
+            return dog;
         }
 
         [HttpPost]

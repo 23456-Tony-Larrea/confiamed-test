@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ws-dog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ceee907e27dc95597c3e0d65b5c5380ed3d5e60")]
 [assembly: System.Reflection.AssemblyProductAttribute("ws-dog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ws-dog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
