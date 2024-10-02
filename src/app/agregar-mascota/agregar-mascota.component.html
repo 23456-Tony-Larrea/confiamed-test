@@ -1,0 +1,67 @@
+<mat-card class="w-full max-w-4xl mx-auto">
+  <mat-card-header>
+    <mat-card-title class="text-2xl font-bold text-center">{{
+      isEditMode ? "Editar Usuario" : "Agregar Usuario"
+    }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" class="form-grid">
+      <div class="form-row">
+        <mat-form-field class="input-field">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Nombre"
+            name="nombre"
+            [(ngModel)]="nombre"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="input-field">
+          <mat-label>Raza</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Raza"
+            name="raza"
+            [(ngModel)]="raza"
+            required
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field class="input-field">
+          <mat-label>Estatura (en metros)</mat-label>
+          <input
+            matInput
+            type="number"
+            step="0.01"
+            placeholder="Estatura"
+            name="estatura"
+            [(ngModel)]="estatura"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="input-field">
+          <mat-label>Peso (en Kg)</mat-label>
+          <input
+            matInput
+            type="number"
+            step="0.01"
+            placeholder="Estatura"
+            name="estatura"
+            [(ngModel)]="estatura"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <button mat-raised-button color="primary" type="submit">
+          {{ isEditMode ? "Actualizar Mascota" : "Agregar Mascota" }}
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<mat-card class="w-full max-w-4xl mx-auto">
+  <mat-card-header>
+    <mat-card-title class="text-2xl font-bold text-center"
+      >Gestión de Mascotas</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex justify-between items-center mb-4">
+      <mat-form-field class="relative w-64">
+        <mat-icon matPrefix>search</mat-icon>
+        <input
+          matInput
+          type="text"
+          placeholder="Buscar mascotas..."
+          [(ngModel)]="searchTerm"
+        />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addDog()">
+        <mat-icon>add</mat-icon> Agregar Mascota
+      </button>
+    </div>
+    <table
+      mat-table
+      [dataSource]="dogs | filter : searchTerm"
+      class="mat-elevation-z8"
+    >
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let dog">{{ dog.nombre }}</td>
+      </ng-container>
+      <ng-container matColumnDef="estatura">
+        <th mat-header-cell *matHeaderCellDef>Estatura</th>
+        <td mat-cell *matCellDef="let dog">{{ dog.estatura }}</td>
+      </ng-container>
+      <ng-container matColumnDef="raza">
+        <th mat-header-cell *matHeaderCellDef>Raza</th>
+        <td mat-cell *matCellDef="let dog">{{ dog.raza }}</td>
+      </ng-container>
+      <ng-container matColumnDef="peso">
+        <th mat-header-cell *matHeaderCellDef>peso</th>
+        <td mat-cell *matCellDef="let dog">{{ dog.peso }}</td>
+      </ng-container>
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let dog">
+          <button mat-button (click)="editDogs(dog)">Editar</button>
+          <button mat-button color="warn" (click)="deleteDogs(dog)">
+            Eliminar
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
